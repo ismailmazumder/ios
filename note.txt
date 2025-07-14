@@ -1,0 +1,9 @@
+byte = 8 bit [db]
+word = 2 byte  = 16 bit [dw]
+double word = 4 byte  [dd]
+quadword = 8 byte [dq]
+
+
+
+dd command will control where the kernel.img will be in main.img (disk) 
+linker file will manage  where kernel should be loaded 
