@@ -1,11 +1,12 @@
-// kernel.c
-void kernel_main() {
-    char* vmem = (char*)0xB8000;
-    const char* msg = "Hello from kernel!";
-    for (int i = 0; msg[i]; ++i) {
-        vmem[i * 2] = msg[i];
-        vmem[i * 2 + 1] = 0x07; // white on black
-    }
+/* kernel.c */
 
-    while (1) __asm__ volatile("hlt");
+void kernel_main(void) {
+    /* VGA text buffer starts at 0xB8000 */
+    volatile char *vmem = (volatile char *)0xB8000;
+
+    /* Continuously print the character 'A' in white-on-black */
+    while (1) {
+        vmem[0] = 'A';   /* character */
+        vmem[1] = 0x07;  /* attribute byte: white on black */
+    }
 }
