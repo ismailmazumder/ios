@@ -10,3 +10,5 @@ dd if=kernel.bin of=os.img conv=notrunc seek=2
 
 
 qemu-system-x86_64 -drive file=os.img,format=raw -m 16M
+
+
