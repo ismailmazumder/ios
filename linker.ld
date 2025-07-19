@@ -1,9 +1,9 @@
-OUTPUT_FORMAT(binary)
-ENTRY(kernel_main)
-SECTIONS {
-  . = 0x90000;
-  .text : { *(.text*) }
-  .rodata : { *(.rodata*) }
-  .data : { *(.data*) }
-  .bss  : { *(.bss*)  *(COMMON) }
+ENTRY(_start)
+OUTPUT_FORMAT("binary")
+SECTIONS
+{
+    . = 0x1000;
+    .text : { *(.text) }
+    .data : { *(.data) }
+    .bss  : { *(.bss) }
 }
